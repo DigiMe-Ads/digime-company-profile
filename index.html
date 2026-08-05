@@ -144,9 +144,10 @@ body.on-dark .dots button.active{background:#fff}
   border:1px solid var(--line);display:flex;flex-direction:column;gap:14px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .green .svc{background:rgba(255,255,255,.97);color:var(--ink)}
 .svc:hover{transform:translateY(-8px);box-shadow:0 30px 50px -24px rgba(0,0,0,.4)}
-.svc .ic{width:52px;height:52px;color:var(--green)}
+.svc .ic{width:56px;height:56px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.svc .ic img{max-width:100%;max-height:100%;object-fit:contain;display:block}
 .svc h4{font-size:clamp(.95rem,1.6vw,1.12rem);font-weight:700;line-height:1.2}
-.svc.alt{background:var(--green);color:#fff}.svc.alt .ic{color:#fff}
+.svc.alt{background:var(--green);color:#fff;border:1px solid rgba(255,255,255,.55)}.svc.alt .ic{color:#fff}
 
 /* Process — connected flow */
 .proc{
@@ -398,12 +399,12 @@ body.on-dark .dots button.active{background:#fff}
       <span class="eyebrow" data-anim>What we do</span>
       <h2 class="title" data-anim data-d="1" style="margin-bottom:clamp(18px,3vh,34px)">SERVICES WE OFFER</h2>
       <div class="svc-grid">
-        <div class="svc" data-anim data-d="1"><div class="ic">%%IC_social%%</div><h4>Social Media Management</h4></div>
-        <div class="svc data" data-anim data-d="2"><div class="ic">%%IC_consult%%</div><h4>Digital Marketing Consultation</h4></div>
-        <div class="svc" data-anim data-d="3"><div class="ic">%%IC_video%%</div><h4>Photography &amp; Videography</h4></div>
-        <div class="svc" data-anim data-d="4"><div class="ic">%%IC_design%%</div><h4>Creative Designing</h4></div>
-        <div class="svc" data-anim data-d="5"><div class="ic">%%IC_brand%%</div><h4>Corporate Branding</h4></div>
-        <div class="svc" data-anim data-d="6"><div class="ic">%%IC_web%%</div><h4>Website Development</h4></div>
+        <div class="svc" data-anim data-d="1"><div class="ic"><img loading="lazy" decoding="async" src="assets/social-media-logo.png" alt=""></div><h4>Social Media Management</h4></div>
+        <div class="svc alt" data-anim data-d="2"><div class="ic"><img loading="lazy" decoding="async" src="assets/digital-markerting-logo.png" alt=""></div><h4>Digital Marketing Consultation</h4></div>
+        <div class="svc alt" data-anim data-d="3"><div class="ic">%%IC_video%%</div><h4>Photography &amp; Videography</h4></div>
+        <div class="svc alt" data-anim data-d="4"><div class="ic"><img loading="lazy" decoding="async" src="assets/creative-design-logo.png" alt=""></div><h4>Creative Designing</h4></div>
+        <div class="svc" data-anim data-d="5"><div class="ic"><img loading="lazy" decoding="async" src="assets/coporate-branding-logo.png" alt=""></div><h4>Corporate Branding</h4></div>
+        <div class="svc alt" data-anim data-d="6"><div class="ic"><img loading="lazy" decoding="async" src="assets/web-development-logo.png" alt=""></div><h4>Website Development</h4></div>
       </div>
     </div>
   </section>
