@@ -130,7 +130,8 @@ body.on-dark .dots button.active{background:#fff}
 .media.tall{aspect-ratio:4/3.4;max-height:74vh}
 
 /* Vision / Mission cards */
-.vm{display:flex;flex-direction:column;gap:22px; overflow: visible;}
+.split-top{align-items:flex-start}
+.vm{display:flex;flex-direction:column;gap:22px; overflow: visible; margin-top:18px;}
 .vm .card{background:var(--green);border-radius:22px;padding:clamp(18px,2.4vw,28px);color:#fff;position:relative;box-shadow:var(--shadow); overflow: visible;}
 .vm .card h3{position:absolute;top:-18px;left:22px;background:#fff;color:var(--green);font-weight:700;
   font-size:clamp(1rem,1.9vw,1.3rem);padding:8px 22px;border-radius:100px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
@@ -146,14 +147,33 @@ body.on-dark .dots button.active{background:#fff}
 .svc h4{font-size:clamp(.95rem,1.6vw,1.12rem);font-weight:700;line-height:1.2}
 .svc.alt{background:var(--green);color:#fff}.svc.alt .ic{color:#fff}
 
-/* Process */
-.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
-.step{position:relative;padding-left:0}
-.step .num{font-weight:800;font-size:clamp(2rem,4vw,3.1rem);color:rgba(255,255,255,.25);line-height:1}
-.step .icn{width:44px;height:44px;color:#fff;margin:.4rem 0 .7rem;display:flex;align-items:center;justify-content:center;
-  border:2px solid rgba(255,255,255,.6);border-radius:50%;padding:9px}
-.step h4{font-size:clamp(1rem,1.8vw,1.25rem);font-weight:700;margin-bottom:.35rem}
-.step p{font-size:clamp(.78rem,1.4vw,.94rem);color:rgba(255,255,255,.8);line-height:1.45}
+/* Process — connected flow */
+.proc{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  grid-template-areas:
+    "s1 a1 s2 a2 s3"
+    ".  .  .  .  va"
+    "s6 a4 s5 a3 s4";
+  align-items:center;
+  gap:clamp(10px,1.6vh,18px) clamp(6px,1vw,14px);
+}
+.proc .s1{grid-area:s1}.proc .s2{grid-area:s2}.proc .s3{grid-area:s3}
+.proc .s4{grid-area:s4}.proc .s5{grid-area:s5}.proc .s6{grid-area:s6}
+.proc .a1{grid-area:a1}.proc .a2{grid-area:a2}.proc .a3{grid-area:a3}.proc .a4{grid-area:a4}
+.proc .va{grid-area:va}
+.step{position:relative;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+  border-radius:18px;padding:clamp(14px,1.7vw,22px);transition:transform .4s var(--ease),background .4s var(--ease)}
+.step:hover{background:rgba(255,255,255,.15);transform:translateY(-5px)}
+.step .num{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.6rem);color:rgba(255,255,255,.28);line-height:1}
+.step .icn{width:40px;height:40px;color:#fff;margin:.4rem 0 .6rem;display:flex;align-items:center;justify-content:center;
+  border:2px solid rgba(255,255,255,.6);border-radius:50%;padding:8px}
+.step h4{font-size:clamp(.95rem,1.7vw,1.15rem);font-weight:700;margin-bottom:.3rem}
+.step p{font-size:clamp(.74rem,1.3vw,.88rem);color:rgba(255,255,255,.8);line-height:1.42}
+.flow-arrow{width:clamp(22px,2.6vw,38px);color:rgba(255,255,255,.5)}
+.flow-arrow svg{display:block;width:100%;height:auto}
+.proc .a3,.proc .a4{transform:rotate(180deg)}
+.proc .va{transform:rotate(90deg);justify-self:center}
 
 /* Industries */
 .tree-top{text-align:center;margin-bottom:clamp(14px,2.4vh,26px)}
@@ -165,6 +185,9 @@ body.on-dark .dots button.active{background:#fff}
 .ind ul{list-style:none;display:flex;flex-direction:column;gap:4px}
 .ind li{font-size:clamp(.66rem,1.05vw,.8rem);color:var(--ink-2);font-weight:500;line-height:1.25}
 .ind li::before{content:"›";color:var(--green);font-weight:800;margin-right:5px}
+.clients-wrap{margin-top:clamp(10px,2.4vh,26px);display:flex;justify-content:center}
+.clients-wrap img{width:100%;max-width:1220px;height:auto;max-height:56vh;object-fit:contain;
+  border-radius:18px;box-shadow:none;background:#fff;padding:clamp(8px,1.4vw,18px)}
 
 /* Notable project */
 .notable{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center}
@@ -194,6 +217,33 @@ body.on-dark .dots button.active{background:#fff}
 .logo-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(255,255,255,.94);
   border-radius:16px;padding:10px 16px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
 .logo-badge img{height:clamp(34px,4vw,58px);width:auto}
+
+/* Gallery collages — dense, edge-to-edge mosaic wall (shared by every gallery slide) */
+.collage{display:grid;gap:clamp(4px,.6vw,7px)}
+.collage.c4{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,clamp(160px,21vh,230px));
+  grid-template-areas:"a b c" "a d c"}
+.collage.c5{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,clamp(160px,21vh,230px));
+  grid-template-areas:"a b c" "a d e"}
+.collage.c6{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,clamp(160px,21vh,230px));
+  grid-template-areas:"a b c d" "a e f d"}
+.collage.c4 .shot:nth-child(1){grid-area:a}
+.collage.c4 .shot:nth-child(2){grid-area:b}
+.collage.c4 .shot:nth-child(3){grid-area:d}
+.collage.c4 .shot:nth-child(4){grid-area:c}
+.collage.c5 .shot:nth-child(1){grid-area:a}
+.collage.c5 .shot:nth-child(2){grid-area:b}
+.collage.c5 .shot:nth-child(3){grid-area:d}
+.collage.c5 .shot:nth-child(4){grid-area:c}
+.collage.c5 .shot:nth-child(5){grid-area:e}
+.collage.c6 .shot:nth-child(1){grid-area:a}
+.collage.c6 .shot:nth-child(2){grid-area:b}
+.collage.c6 .shot:nth-child(3){grid-area:e}
+.collage.c6 .shot:nth-child(4){grid-area:c}
+.collage.c6 .shot:nth-child(5){grid-area:f}
+.collage.c6 .shot:nth-child(6){grid-area:d}
+.collage .shot{position:relative;overflow:hidden;border-radius:4px}
+.collage .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.collage .shot:hover img{transform:scale(1.08)}
 
 /* subheading rows for salon/rugby */
 .rowlabel{font-weight:700;font-size:clamp(.95rem,1.7vw,1.2rem);margin:0 0 .5rem}
@@ -257,16 +307,21 @@ body.on-dark .dots button.active{background:#fff}
   html{scroll-snap-type:none}
   .slide{height:auto;min-height:100vh;min-height:100dvh}
   .split,.notable,.perf,.perf.rev{grid-template-columns:1fr}
-  .svc-grid,.proc{grid-template-columns:repeat(2,1fr)}
-  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
   .g4,.g6{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(2,1fr)}
   .team-grid{grid-template-columns:repeat(2,1fr)}
   .dots{display:none}
   .cards{grid-template-columns:1fr 1fr}
+  .proc{grid-template-columns:1fr;grid-template-areas:
+    "s1" "a1" "s2" "a2" "s3" "va" "s4" "a3" "s5" "a4" "s6"}
+  .proc .a1,.proc .a2,.proc .a3,.proc .a4,.proc .va{transform:rotate(90deg)}
+  .flow-arrow{width:clamp(20px,7vw,28px);margin:0 auto}
+  .collage.c4,.collage.c5,.collage.c6{grid-template-columns:repeat(2,1fr);grid-template-rows:none;grid-template-areas:none}
+  .collage .shot{grid-area:auto!important;aspect-ratio:1/1}
 }
 @media (max-width:460px){
-  .svc-grid,.proc,.ind-grid,.team-grid,.g4,.g6,.g3{grid-template-columns:1fr}
+  .svc-grid,.team-grid,.g4,.g6,.g3{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   [data-anim]{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
@@ -316,7 +371,7 @@ body.on-dark .dots button.active{background:#fff}
   <!-- 3 VISION / MISSION -->
   <section class="slide paper" data-name="Vision & Mission">
     <span class="blob soft" style="width:30vw;height:30vw;bottom:-14vw;right:-10vw"></span>
-    <div class="inner split">
+    <div class="inner split split-top">
       <div class="media tall" data-anim="left">
         <img loading="lazy" decoding="async" src="assets/p03_00_2016x1344.jpg" alt="Creative process">
       </div>
@@ -359,12 +414,17 @@ body.on-dark .dots button.active{background:#fff}
       <span class="eyebrow" data-anim>How we work</span>
       <h2 class="title" data-anim data-d="1" style="margin-bottom:clamp(16px,3vh,30px)">OUR PROCESS</h2>
       <div class="proc">
-        <div class="step" data-anim data-d="1"><div class="num">01</div><div class="icn">%%IC_search%%</div><h4>Research</h4><p>Extensive research to identify the current brand position and market opportunities.</p></div>
-        <div class="step" data-anim data-d="2"><div class="num">02</div><div class="icn">%%IC_bulb%%</div><h4>Strategy</h4><p>Align insights and findings with business objectives to attract quality leads.</p></div>
-        <div class="step" data-anim data-d="3"><div class="num">03</div><div class="icn">%%IC_rocket%%</div><h4>Execute</h4><p>Content creation and campaign execution designed to reach the intended audience effectively.</p></div>
-        <div class="step" data-anim data-d="4"><div class="num">04</div><div class="icn">%%IC_chart%%</div><h4>Measure</h4><p>Measuring and evaluating the success of executed strategies using data and analytics.</p></div>
-        <div class="step" data-anim data-d="5"><div class="num">05</div><div class="icn">%%IC_gear%%</div><h4>Optimize</h4><p>Continuous feedback and optimization to improve campaign outcomes and performance.</p></div>
-        <div class="step" data-anim data-d="6"><div class="num">06</div><div class="icn">%%IC_loop%%</div><h4>Repeat</h4><p>A cyclical, data-led loop that keeps every brand ahead of the curve.</p></div>
+        <div class="step s1" data-anim data-d="1"><div class="num">01</div><div class="icn">%%IC_search%%</div><h4>Research</h4><p>Extensive research to identify the current brand position and market opportunities.</p></div>
+        <div class="flow-arrow a1"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
+        <div class="step s2" data-anim data-d="2"><div class="num">02</div><div class="icn">%%IC_bulb%%</div><h4>Strategy</h4><p>Align insights and findings with business objectives to attract quality leads.</p></div>
+        <div class="flow-arrow a2"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
+        <div class="step s3" data-anim data-d="3"><div class="num">03</div><div class="icn">%%IC_rocket%%</div><h4>Execute</h4><p>Content creation and campaign execution designed to reach the intended audience effectively.</p></div>
+        <div class="flow-arrow va"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
+        <div class="step s4" data-anim data-d="4"><div class="num">04</div><div class="icn">%%IC_chart%%</div><h4>Measure</h4><p>Measuring and evaluating the success of executed strategies using data and analytics.</p></div>
+        <div class="flow-arrow a3"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
+        <div class="step s5" data-anim data-d="5"><div class="num">05</div><div class="icn">%%IC_gear%%</div><h4>Optimize</h4><p>Continuous feedback and optimization to improve campaign outcomes and performance.</p></div>
+        <div class="flow-arrow a4"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
+        <div class="step s6" data-anim data-d="6"><div class="num">06</div><div class="icn">%%IC_loop%%</div><h4>Repeat</h4><p>A cyclical, data-led loop that keeps every brand ahead of the curve.</p></div>
       </div>
     </div>
   </section>
@@ -377,21 +437,10 @@ body.on-dark .dots button.active{background:#fff}
       <div class="tree-top">
         <span class="eyebrow" data-anim style="margin-bottom:.6rem">Our reach</span>
         <h2 class="title" data-anim data-d="1" style="font-size:clamp(1.6rem,4vw,2.9rem)">INDUSTRIES WE'VE <span class="g">TAPPED</span> INTO</h2>
-        <div class="node" data-anim data-d="2" style="margin-top:.7rem">DigiMe<span style="color:var(--green)">Ads</span></div>
+        <!-- <div class="node" data-anim data-d="2" style="margin-top:.7rem">DigiMe<span style="color:var(--green)">Ads</span></div> -->
       </div>
-      <div class="ind-grid">
-        <div class="ind" data-anim data-d="1"><span class="cat">Bar</span><ul><li>Nidahas</li></ul></div>
-        <div class="ind" data-anim data-d="1"><span class="cat">HR &amp; Legal</span><ul><li>Edge</li><li>McFarling Law Group</li></ul></div>
-        <div class="ind" data-anim data-d="2"><span class="cat">Travel</span><ul><li>Book My Vacay</li><li>Fun Holidays</li><li>Mansello</li></ul></div>
-        <div class="ind" data-anim data-d="2"><span class="cat">Gift &amp; Retail</span><ul><li>House of Gifts</li></ul></div>
-        <div class="ind" data-anim data-d="3"><span class="cat">Beauty</span><ul><li>Salon 21</li></ul></div>
-        <div class="ind" data-anim data-d="3"><span class="cat">FMCG</span><ul><li>Bee Natural Organic</li></ul></div>
-        <div class="ind" data-anim data-d="4"><span class="cat">Entertainment</span><ul><li>Playdium</li></ul></div>
-        <div class="ind" data-anim data-d="4"><span class="cat">Real Estate</span><ul><li>Budapest Sky</li><li>The Regent</li><li>City Stay London</li></ul></div>
-        <div class="ind" data-anim data-d="5"><span class="cat">Hospitality</span><ul><li>O Mirissa</li><li>Deltano's</li><li>Lavinia</li><li>Soho</li><li>MAYs Table</li></ul></div>
-        <div class="ind" data-anim data-d="5"><span class="cat">Education</span><ul><li>StudentVisa</li><li>ESOL College</li><li>Synexis Education</li><li>CELA</li></ul></div>
-        <div class="ind" data-anim data-d="6"><span class="cat">Sports</span><ul><li>Colombo Kickerz</li><li>Sri Lanka Rugby</li><li>Joe's Rugby</li><li>SL Baseball</li></ul></div>
-        <div class="ind" data-anim data-d="6"><span class="cat">FMCG / Drive-Thru</span><ul><li>D.E.I Drive-Thru</li></ul></div>
+      <div class="clients-wrap" data-anim data-d="3">
+        <img loading="lazy" decoding="async" src="assets/clients.jpeg" alt="Our clients across every industry we've tapped into">
       </div>
     </div>
   </section>
@@ -504,11 +553,11 @@ body.on-dark .dots button.active{background:#fff}
         <h2 class="title" data-anim data-d="1">NIDAHAS BAR</h2>
         <p class="sub" data-anim data-d="2" style="color:rgba(255,255,255,.7)">Premium food &amp; beverage photography and reels.</p>
       </div>
-      <div class="grid g4" data-anim data-d="3">
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p12_04_760x1351.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p12_01_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p12_03_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p12_05_540x675.jpg" alt=""></div>
+      <div class="collage c4" data-anim data-d="3">
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p12_04_760x1351.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p12_01_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p12_03_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p12_05_540x675.jpg" alt=""></div>
       </div>
     </div>
   </section>
@@ -544,13 +593,13 @@ body.on-dark .dots button.active{background:#fff}
         <h2 class="title" data-anim data-d="1">MAYs TABLE</h2>
         <p class="sub" data-anim data-d="2" style="color:rgba(255,255,255,.7)">Cinematic kitchen &amp; dining storytelling.</p>
       </div>
-      <div class="grid g6" data-anim data-d="3">
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p14_00_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p14_01_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p14_02_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p14_03_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p14_04_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p14_05_540x675.jpg" alt=""></div>
+      <div class="collage c6" data-anim data-d="3">
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p14_00_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p14_01_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p14_02_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p14_03_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p14_04_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p14_05_540x675.jpg" alt=""></div>
       </div>
     </div>
   </section>
@@ -586,13 +635,12 @@ body.on-dark .dots button.active{background:#fff}
         <h2 class="title" data-anim data-d="1">HOUSE OF GIFTS</h2>
         <p class="sub" data-anim data-d="2" style="color:rgba(255,255,255,.7)">Seasonal campaign photography &amp; styling.</p>
       </div>
-      <div class="grid g3" data-anim data-d="3">
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p16_00_1642x1095.jpg" alt=""></div>
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p16_02_1642x1095.jpg" alt=""></div>
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p16_06_480x327.png" alt="" style="object-fit:contain;background:#111"></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p16_01_1095x1642.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p16_03_1095x1642.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p16_04_1095x1642.jpg" alt=""></div>
+      <div class="collage c5" data-anim data-d="3">
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p16_01_1095x1642.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p16_00_1642x1095.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p16_03_1095x1642.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p16_04_1095x1642.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p16_02_1642x1095.jpg" alt=""></div>
       </div>
     </div>
   </section>
@@ -628,13 +676,13 @@ body.on-dark .dots button.active{background:#fff}
         <h2 class="title" data-anim data-d="1">O MIRISSA <span class="g" style="color:#f39a2b">/</span> DELTANO'S</h2>
         <p class="sub" data-anim data-d="2" style="color:rgba(255,255,255,.7)">Wood-fired flavour, shot to spark craving.</p>
       </div>
-      <div class="grid g6" data-anim data-d="3">
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p18_00_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p18_01_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p18_02_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p18_03_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p18_04_540x675.jpg" alt=""></div>
-        <div class="cell p"><img loading="lazy" decoding="async" src="assets/p18_05_540x675.jpg" alt=""></div>
+      <div class="collage c6" data-anim data-d="3">
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p18_00_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p18_01_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p18_02_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p18_03_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p18_04_540x675.jpg" alt=""></div>
+        <div class="shot"><img loading="lazy" decoding="async" src="assets/p18_05_540x675.jpg" alt=""></div>
       </div>
     </div>
   </section>
