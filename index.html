@@ -130,8 +130,8 @@ body.on-dark .dots button.active{background:#fff}
 .media.tall{aspect-ratio:4/3.4;max-height:74vh}
 
 /* Vision / Mission cards */
-.vm{display:flex;flex-direction:column;gap:22px}
-.vm .card{background:var(--green);border-radius:22px;padding:clamp(18px,2.4vw,28px);color:#fff;position:relative;box-shadow:var(--shadow)}
+.vm{display:flex;flex-direction:column;gap:22px; overflow: visible;}
+.vm .card{background:var(--green);border-radius:22px;padding:clamp(18px,2.4vw,28px);color:#fff;position:relative;box-shadow:var(--shadow); overflow: visible;}
 .vm .card h3{position:absolute;top:-18px;left:22px;background:#fff;color:var(--green);font-weight:700;
   font-size:clamp(1rem,1.9vw,1.3rem);padding:8px 22px;border-radius:100px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
 .vm .card p{margin-top:14px;font-size:clamp(.86rem,1.5vw,1.02rem);line-height:1.55}
@@ -343,7 +343,7 @@ body.on-dark .dots button.active{background:#fff}
       <h2 class="title" data-anim data-d="1" style="margin-bottom:clamp(18px,3vh,34px)">SERVICES WE OFFER</h2>
       <div class="svc-grid">
         <div class="svc" data-anim data-d="1"><div class="ic">%%IC_social%%</div><h4>Social Media Management</h4></div>
-        <div class="svc alt" data-anim data-d="2"><div class="ic">%%IC_consult%%</div><h4>Digital Marketing Consultation</h4></div>
+        <div class="svc data" data-anim data-d="2"><div class="ic">%%IC_consult%%</div><h4>Digital Marketing Consultation</h4></div>
         <div class="svc" data-anim data-d="3"><div class="ic">%%IC_video%%</div><h4>Photography &amp; Videography</h4></div>
         <div class="svc" data-anim data-d="4"><div class="ic">%%IC_design%%</div><h4>Creative Designing</h4></div>
         <div class="svc" data-anim data-d="5"><div class="ic">%%IC_brand%%</div><h4>Corporate Branding</h4></div>
@@ -426,9 +426,9 @@ body.on-dark .dots button.active{background:#fff}
           </div>
         </div>
         <div class="photo" data-anim="right" data-d="2">
-          <img loading="lazy" decoding="async" src="assets/p08_00_1185x791.jpg" alt="Colombo Kickerz">
+          <img loading="lazy" decoding="async" src="assets/football1.png" alt="Colombo Kickerz">
           <div class="logo-badge" style="left:auto;right:14px;top:auto;bottom:14px;transform:none;background:rgba(255,255,255,.95)">
-            <img loading="lazy" decoding="async" src="assets/p08_01_117x146.png" alt="Colombo Kickerz logo" style="height:clamp(48px,6vw,84px)">
+            <img loading="lazy" decoding="async" src="assets/kickerz-carnival.png" alt="Colombo Kickerz logo" style="height:clamp(48px,6vw,84px)">
           </div>
         </div>
       </div>
@@ -450,8 +450,8 @@ body.on-dark .dots button.active{background:#fff}
         <div class="cell w"><img loading="lazy" decoding="async" src="assets/p09_06_615x410.jpg" alt=""></div>
         <div class="cell w"><img loading="lazy" decoding="async" src="assets/p09_01_339x226.jpg" alt=""></div>
         <div class="cell w"><img loading="lazy" decoding="async" src="assets/p09_07_480x640.jpg" alt=""></div>
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p10_01_480x319.jpg" alt=""></div>
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_02_768x512.jpg" alt=""></div>
+        <div class="cell w"><img loading="lazy" decoding="async" src="assets/kickerz-inprint-1.jpeg" alt=""></div>
+        <div class="cell w"><img loading="lazy" decoding="async" src="assets/kickerz-inprint-2.jpeg" alt=""></div>
       </div>
     </div>
   </section>
@@ -465,13 +465,13 @@ body.on-dark .dots button.active{background:#fff}
         <div class="grid g3" data-anim data-d="2" style="margin-bottom:clamp(12px,2vh,20px)">
           <div class="cell w"><img loading="lazy" decoding="async" src="assets/p10_01_480x319.jpg" alt=""></div>
           <div class="cell w"><img loading="lazy" decoding="async" src="assets/p10_02_665x228.jpg" alt=""></div>
-          <div class="cell w"><img loading="lazy" decoding="async" src="assets/p10_03_334x445.jpg" alt=""></div>
+          <div class="cell w"><img loading="lazy" decoding="async" src="assets/salon2.png" alt=""></div>
         </div>
         <p class="rowlabel" data-anim data-d="3">Beverley International</p>
         <div class="grid g3" data-anim data-d="4">
           <div class="cell w"><img loading="lazy" decoding="async" src="assets/p10_04_665x227.jpg" alt=""></div>
-          <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_01_640x480.jpg" alt=""></div>
-          <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_03_640x480.jpg" alt=""></div>
+          <div class="cell w"><img loading="lazy" decoding="async" src="assets/beverly-internation-2.png" alt=""></div>
+          <div class="cell w"><img loading="lazy" decoding="async" src="assets/p10_03_334x445.jpg" alt=""></div>
         </div>
       </div>
     </div>
@@ -483,15 +483,15 @@ body.on-dark .dots button.active{background:#fff}
       <span class="eyebrow" data-anim>Live events</span>
       <p class="rowlabel" data-anim data-d="1" style="margin-top:.3rem">Fireside with Rugby Legend Kieran Read &amp; Jamie Wall — 2026</p>
       <div class="grid g3" data-anim data-d="2" style="margin-bottom:clamp(12px,2vh,20px)">
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_01_640x480.jpg" alt=""></div>
+        <div class="cell w"><img loading="lazy" decoding="async" src="assets/rugby-1.jpeg" alt=""></div>
         <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_02_768x512.jpg" alt=""></div>
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_03_640x480.jpg" alt=""></div>
+        <div class="cell w"><img loading="lazy" decoding="async" src="assets/rugby-2.jpeg" alt=""></div>
       </div>
       <p class="rowlabel" data-anim data-d="3">New Zealand U85KG Tour of Sri Lanka — 2026</p>
       <div class="grid g3" data-anim data-d="4">
         <div class="cell w" style="grid-column:span 1"><img loading="lazy" decoding="async" src="assets/p11_04_640x480.jpg" alt=""></div>
         <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_01_640x480.jpg" alt=""></div>
-        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_02_768x512.jpg" alt=""></div>
+        <div class="cell w"><img loading="lazy" decoding="async" src="assets/p11_03_640x480.jpg" alt=""></div>
       </div>
     </div>
   </section>
@@ -531,7 +531,7 @@ body.on-dark .dots button.active{background:#fff}
           <div class="metric" data-anim data-d="4"><div class="k"><b>i</b> Content interactions</div><div class="val"><span class="num" data-to="303">0</span><span class="delta up">↑ 544.7%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[3,4,3,5,6,5,8,12,30,66,52,40]"></svg></div>
           <div class="metric" data-anim data-d="5"><div class="k"><b>i</b> Link clicks</div><div class="val"><span class="num" data-to="252">0</span><span class="delta up">↑ 100%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[1,2,2,3,4,5,7,10,16,26,44,70]"></svg></div>
         </div>
-        <p class="insight" data-anim data-d="6">Insights based on July 2026 performance data.</p>
+        <p class="insight" data-anim data-d="6">Insights based on performance data.</p>
       </div>
     </div>
   </section>
@@ -569,7 +569,7 @@ body.on-dark .dots button.active{background:#fff}
           <div class="metric" data-anim data-d="4"><div class="k"><b>i</b> Content interactions</div><div class="val"><span class="num" data-to="197">0</span><span class="delta up">↑ 203.1%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[4,3,5,6,8,7,10,30,55,40,72,60]"></svg></div>
           <div class="metric" data-anim data-d="5"><div class="k"><b>i</b> Link clicks</div><div class="val"><span class="num" data-to="226">0</span><span class="delta up">↑ 100%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[1,2,3,3,5,6,9,13,20,30,50,78]"></svg></div>
         </div>
-        <p class="insight" data-anim data-d="6">Insights based on July 2026 performance data.</p>
+        <p class="insight" data-anim data-d="6">Insights based on performance data.</p>
       </div>
       <div class="phone-wrap" data-anim="right">
         <div class="halo"></div>
@@ -603,7 +603,7 @@ body.on-dark .dots button.active{background:#fff}
     <div class="inner perf">
       <div class="phone-wrap" data-anim="left">
         <div class="halo"></div>
-        <div class="phone blk"><div class="scr" style="background:#0a0a0a;padding:16%"><img loading="lazy" decoding="async" src="assets/p16_06_480x327.png" alt="House of Gifts"></div></div>
+        <div class="phone blk"><div class="scr" style="background:#ffffff;padding:16%"><img loading="lazy" decoding="async" src="assets/p16_06_480x327.png" alt="House of Gifts"></div></div>
       </div>
       <div>
         <span class="eyebrow" data-anim data-d="1">Performance highlight</span>
@@ -615,7 +615,7 @@ body.on-dark .dots button.active{background:#fff}
           <div class="metric" data-anim data-d="4"><div class="k"><b>i</b> Content interactions</div><div class="val"><span class="num" data-to="308">0</span><span class="delta up">↑ 47.4%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[5,6,8,7,10,9,12,15,22,38,64,86]"></svg></div>
           <div class="metric" data-anim data-d="5"><div class="k"><b>i</b> Link clicks</div><div class="val"><span class="num" data-to="1.2" data-suffix="K">0</span><span class="delta up">↑ 919.5%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[1,1,2,2,3,4,6,10,18,34,60,92]"></svg></div>
         </div>
-        <p class="insight" data-anim data-d="6">Insights based on June 2026 performance data.</p>
+        <p class="insight" data-anim data-d="6">Insights based on performance data.</p>
       </div>
     </div>
   </section>
@@ -625,7 +625,7 @@ body.on-dark .dots button.active{background:#fff}
     <div class="inner">
       <div class="gal-head">
         <span class="eyebrow" data-anim>Content production</span>
-        <h2 class="title" data-anim data-d="1">O MIRISSA <span class="g" style="color:#f39a2b">·</span> DELTANO'S</h2>
+        <h2 class="title" data-anim data-d="1">O MIRISSA <span class="g" style="color:#f39a2b">/</span> DELTANO'S</h2>
         <p class="sub" data-anim data-d="2" style="color:rgba(255,255,255,.7)">Wood-fired flavour, shot to spark craving.</p>
       </div>
       <div class="grid g6" data-anim data-d="3">
@@ -645,7 +645,7 @@ body.on-dark .dots button.active{background:#fff}
     <div class="inner perf rev">
       <div>
         <span class="eyebrow" data-anim data-d="1">Performance highlight</span>
-        <h2 class="title" data-anim data-d="1" style="font-size:clamp(1.5rem,3.6vw,2.6rem)">O Mirissa Café &amp; Bistro <span style="color:var(--muted);font-weight:400">| Deltano's</span></h2>
+        <h2 class="title" data-anim data-d="1" style="font-size:clamp(1.2rem,2.6vw,1.6rem)">O Mirissa Café &amp; Bistro <span style="font-size:clamp(1.2rem,2.6vw,1.6rem)">| Deltano's</span></h2>
         <p class="lead" data-anim data-d="2" style="margin:.4rem 0 1rem">Enhanced restaurant appeal digitally through premium, quality-led content.</p>
         <div class="cards">
           <div class="metric" data-anim data-d="2"><div class="k"><b>i</b> Views</div><div class="val"><span class="num" data-to="59.4" data-suffix="K">0</span><span class="delta up">↑ 94.9%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[4,5,6,5,8,7,10,54,90,30,22,40]"></svg></div>
@@ -653,11 +653,11 @@ body.on-dark .dots button.active{background:#fff}
           <div class="metric" data-anim data-d="4"><div class="k"><b>i</b> Content interactions</div><div class="val"><span class="num" data-to="218">0</span><span class="delta up">↑ 40.6%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[6,8,40,55,66,90,60,50,30,20,10,8]"></svg></div>
           <div class="metric" data-anim data-d="5"><div class="k"><b>i</b> Link clicks</div><div class="val"><span class="num" data-to="104">0</span><span class="delta down">↓ 41.9%</span></div><svg class="spark" viewBox="0 0 100 38" preserveAspectRatio="none" data-points="[40,55,70,86,74,60,50,40,28,20,14,10]"></svg></div>
         </div>
-        <p class="insight" data-anim data-d="6">Insights based on January 2026 performance data.</p>
+        <p class="insight" data-anim data-d="6">Insights based on performance data.</p>
       </div>
       <div class="phone-wrap" data-anim="right">
         <div class="halo"></div>
-        <div class="phone blk" style="width:min(24vh,190px)"><div class="scr" style="background:#0a0a0a;padding:12%"><img loading="lazy" decoding="async" src="assets/p18_06_681x681.png" alt="O Mirissa"></div></div>
+        <div class="phone blk" ><div class="scr" style="background:#0a0a0a;padding:12%"><img loading="lazy" decoding="async" src="assets/p18_06_681x681.png" alt="O Mirissa"></div></div>
       </div>
     </div>
   </section>
@@ -689,7 +689,7 @@ body.on-dark .dots button.active{background:#fff}
     <span class="blob" style="width:34vw;height:34vw;bottom:-14vw;right:-14vw"></span>
     <div class="inner">
       <span class="eyebrow" data-anim style="justify-content:center;display:flex">Let's build</span>
-      <h1 class="title" data-anim data-d="1">JOIN FORCES WITH US</h1>
+      <h1 class="title" data-anim data-d="1">CONTACT WITH US</h1>
       <p class="lead" data-anim data-d="2" style="margin:1rem auto 0;text-align:center">We're in business for the long haul because we believe in building strong corporate relationships — and we love it when our partners succeed through working with us.</p>
       <img loading="lazy" decoding="async" class="logo" src="assets/logo_dark.png" alt="DigiMeAds" data-anim="scale" data-d="3">
       <div class="rows" data-anim data-d="4">
