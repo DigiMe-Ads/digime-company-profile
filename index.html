@@ -149,33 +149,9 @@ body.on-dark .dots button.active{background:#fff}
 .svc h4{font-size:clamp(.95rem,1.6vw,1.12rem);font-weight:700;line-height:1.2}
 .svc.alt{background:var(--green);color:#fff;border:1px solid rgba(255,255,255,.55)}.svc.alt .ic{color:#fff}
 
-/* Process — connected flow */
-.proc{
-  display:grid;
-  grid-template-columns:1fr auto 1fr auto 1fr;
-  grid-template-areas:
-    "s1 a1 s2 a2 s3"
-    ".  .  .  .  va"
-    "s6 a4 s5 a3 s4";
-  align-items:center;
-  gap:clamp(10px,1.6vh,18px) clamp(6px,1vw,14px);
-}
-.proc .s1{grid-area:s1}.proc .s2{grid-area:s2}.proc .s3{grid-area:s3}
-.proc .s4{grid-area:s4}.proc .s5{grid-area:s5}.proc .s6{grid-area:s6}
-.proc .a1{grid-area:a1}.proc .a2{grid-area:a2}.proc .a3{grid-area:a3}.proc .a4{grid-area:a4}
-.proc .va{grid-area:va}
-.step{position:relative;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
-  border-radius:18px;padding:clamp(14px,1.7vw,22px);transition:transform .4s var(--ease),background .4s var(--ease)}
-.step:hover{background:rgba(255,255,255,.15);transform:translateY(-5px)}
-.step .num{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.6rem);color:rgba(255,255,255,.28);line-height:1}
-.step .icn{width:40px;height:40px;color:#fff;margin:.4rem 0 .6rem;display:flex;align-items:center;justify-content:center;
-  border:2px solid rgba(255,255,255,.6);border-radius:50%;padding:8px}
-.step h4{font-size:clamp(.95rem,1.7vw,1.15rem);font-weight:700;margin-bottom:.3rem}
-.step p{font-size:clamp(.74rem,1.3vw,.88rem);color:rgba(255,255,255,.8);line-height:1.42}
-.flow-arrow{width:clamp(22px,2.6vw,38px);color:rgba(255,255,255,.5)}
-.flow-arrow svg{display:block;width:100%;height:auto}
-.proc .a3,.proc .a4{transform:rotate(180deg)}
-.proc .va{transform:rotate(90deg);justify-self:center}
+/* Process — full-bleed image slide */
+.slide.full-bleed{padding:0}
+.bleed-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 
 /* Industries */
 .tree-top{text-align:center;margin-bottom:clamp(14px,2.4vh,26px)}
@@ -315,10 +291,7 @@ body.on-dark .dots button.active{background:#fff}
   .team-grid{grid-template-columns:repeat(2,1fr)}
   .dots{display:none}
   .cards{grid-template-columns:1fr 1fr}
-  .proc{grid-template-columns:1fr;grid-template-areas:
-    "s1" "a1" "s2" "a2" "s3" "va" "s4" "a3" "s5" "a4" "s6"}
-  .proc .a1,.proc .a2,.proc .a3,.proc .a4,.proc .va{transform:rotate(90deg)}
-  .flow-arrow{width:clamp(20px,7vw,28px);margin:0 auto}
+  .bleed-img{object-fit:contain}
   .collage.c4,.collage.c5,.collage.c6{grid-template-columns:repeat(2,1fr);grid-template-rows:none;grid-template-areas:none}
   .collage .shot{grid-area:auto!important;aspect-ratio:1/1}
 }
@@ -399,36 +372,19 @@ body.on-dark .dots button.active{background:#fff}
       <span class="eyebrow" data-anim>What we do</span>
       <h2 class="title" data-anim data-d="1" style="margin-bottom:clamp(18px,3vh,34px)">SERVICES WE OFFER</h2>
       <div class="svc-grid">
-        <div class="svc" data-anim data-d="1"><div class="ic"><img loading="lazy" decoding="async" src="assets/social-media-logo.png" alt=""></div><h4>Social Media Management</h4></div>
+        <div class="svc alt" data-anim data-d="1"><div class="ic"><img loading="lazy" decoding="async" src="assets/social-media-logo2.png" alt=""></div><h4>Social Media Management</h4></div>
         <div class="svc alt" data-anim data-d="2"><div class="ic"><img loading="lazy" decoding="async" src="assets/digital-markerting-logo.png" alt=""></div><h4>Digital Marketing Consultation</h4></div>
-        <div class="svc" data-anim data-d="3"><div class="ic"><img loading="lazy" decoding="async" src="assets/photography-videogrpahy-logo.png" alt=""></div><h4>Photography &amp; Videography</h4></div>
+        <div class="svc alt" data-anim data-d="3"><div class="ic"><img loading="lazy" decoding="async" src="assets/photography-videogrpahy-logo2.png" alt=""></div><h4>Photography &amp; Videography</h4></div>
         <div class="svc alt" data-anim data-d="4"><div class="ic"><img loading="lazy" decoding="async" src="assets/creative-design-logo.png" alt=""></div><h4>Creative Designing</h4></div>
-        <div class="svc" data-anim data-d="5"><div class="ic"><img loading="lazy" decoding="async" src="assets/coporate-branding-logo.png" alt=""></div><h4>Corporate Branding</h4></div>
+        <div class="svc alt" data-anim data-d="5"><div class="ic"><img loading="lazy" decoding="async" src="assets/coporate-branding-logo2.png" alt=""></div><h4>Corporate Branding</h4></div>
         <div class="svc alt" data-anim data-d="6"><div class="ic"><img loading="lazy" decoding="async" src="assets/web-development-logo.png" alt=""></div><h4>Website Development</h4></div>
       </div>
     </div>
   </section>
 
   <!-- 5 PROCESS -->
-  <section class="slide green" data-name="Our Process">
-    <span class="blob" style="width:52vw;height:52vw;top:50%;left:50%;transform:translate(-50%,-50%)"></span>
-    <div class="inner">
-      <span class="eyebrow" data-anim>How we work</span>
-      <h2 class="title" data-anim data-d="1" style="margin-bottom:clamp(16px,3vh,30px)">OUR PROCESS</h2>
-      <div class="proc">
-        <div class="step s1" data-anim data-d="1"><div class="num">01</div><div class="icn">%%IC_search%%</div><h4>Research</h4><p>Extensive research to identify the current brand position and market opportunities.</p></div>
-        <div class="flow-arrow a1"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
-        <div class="step s2" data-anim data-d="2"><div class="num">02</div><div class="icn">%%IC_bulb%%</div><h4>Strategy</h4><p>Align insights and findings with business objectives to attract quality leads.</p></div>
-        <div class="flow-arrow a2"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
-        <div class="step s3" data-anim data-d="3"><div class="num">03</div><div class="icn">%%IC_rocket%%</div><h4>Execute</h4><p>Content creation and campaign execution designed to reach the intended audience effectively.</p></div>
-        <div class="flow-arrow va"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
-        <div class="step s4" data-anim data-d="4"><div class="num">04</div><div class="icn">%%IC_chart%%</div><h4>Measure</h4><p>Measuring and evaluating the success of executed strategies using data and analytics.</p></div>
-        <div class="flow-arrow a3"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
-        <div class="step s5" data-anim data-d="5"><div class="num">05</div><div class="icn">%%IC_gear%%</div><h4>Optimize</h4><p>Continuous feedback and optimization to improve campaign outcomes and performance.</p></div>
-        <div class="flow-arrow a4"><svg viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h84M66 4l22 16-22 16"/></svg></div>
-        <div class="step s6" data-anim data-d="6"><div class="num">06</div><div class="icn">%%IC_loop%%</div><h4>Repeat</h4><p>A cyclical, data-led loop that keeps every brand ahead of the curve.</p></div>
-      </div>
-    </div>
+  <section class="slide green full-bleed" data-name="Our Process">
+    <img loading="lazy" decoding="async" class="bleed-img" src="assets/process.png" alt="Our Process — Research, Strategy, Execute, Measure, Optimize, Repeat">
   </section>
 
   <!-- 6 INDUSTRIES -->
